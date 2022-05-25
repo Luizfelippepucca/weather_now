@@ -1,14 +1,17 @@
-import axios from "axios";
-import { api_key,base_url } from "./constants";
+import { useQuery, UseQueryOptions } from 'react-query';
+import { apiForcities } from './axios';
+import { cityKey } from './key';
+import { CitiesResponse } from "./types";
 
 
-export const apiForcities = axios.create({
-   baseURL:base_url,
-   params:{
-       appid:api_key,
-       lang:`pt_br`,
-   },
-   method:'GET',
-   headers:{'Content-type':'application/json'}
-})
+export const useSearchCities = <T=CitiesResponse>(
+nameCity:string,
+options?:UseQueryOptions<CitiesResponse,T>
+)=>{
+  const useResponseCities = useQuery<CitiesResponse ,T>(cityKey,
+        ()=> apiForcities.get<T,CitiesResponse>(`/weather?q=${nameCity}`),
+        options
+    );
+ return useResponseCities
+}
 

@@ -11,7 +11,9 @@ border-radius:5px ;
 box-shadow:2px 2px 5px rgba(51,51,51,0.1) ;
 display:flex ;
 flex-direction:column ;
+align-items:center ;
 justify-content:space-between ;
+font-family: Helvetica,Arial ;
 `
 
 export const CardTitleArea = styled.div<testeProps>`
@@ -49,9 +51,9 @@ font-size:82px ;
 `
 
 export const AdtionalsInfo = styled.div`
-width:100% ;
+width:220px ;
 display:flex ;
-justify-content:center ;
+justify-content:space-between ;
 align-items:center ;
 font-weight:100 ;
 font-family: Helvetica,Arial ;
@@ -73,7 +75,7 @@ export const HumidityTitle = styled.span`
 `
 
 export const WrapperHumidityValue = styled.span`
-font-size:14px ;
+font-size:18px ;
 `
 export const HumidityValue = styled.span`
 color:#737c84;
@@ -96,7 +98,7 @@ export const PressureTitle = styled.span`
 `
 
 export const WrapperPressureValue = styled.span`
-font-size:14px ;
+font-size:18px ;
 `
 export const PressureValue = styled.span`
 color:#737c84;
@@ -106,7 +108,7 @@ color:#737c84;
 export const FooterCard = styled.div`
 width:100% ;
 background-color:rgba(241,241,241,0.5);
-font-size:12px ;
+font-size:10px ;
 color:#c3c3c3;
 height:50px ;
 display:flex ;
