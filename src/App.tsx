@@ -4,6 +4,7 @@ import { Container } from './styles';
 import { apiForcities } from './services';
 import { useQuery } from 'react-query';
 import './App.css';
+import Cards from './components/Cards';
 
 const App = ()=> {
 
@@ -13,12 +14,12 @@ const App = ()=> {
   
   });
  
-  console.log('fex-->',data);
- 
   return (
       <Container>
         <Header/>
-        <Body><div>teste</div></Body>
+        <Body>
+          <Cards/>
+        </Body>
       </Container>
     
   );

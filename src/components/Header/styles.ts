@@ -12,6 +12,5 @@ justify-content:center;
 `
 
 export const Logo = styled.img`
- width: 100px ;
- 
+ width: 160px ; 
 `
