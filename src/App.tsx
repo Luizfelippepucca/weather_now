@@ -4,9 +4,8 @@ import { Container } from './styles';
 import Cards from './components/Cards';
 import './App.css';
 
-
 const App = ()=> {
-  
+
   return (
       <Container>
         <Header/>

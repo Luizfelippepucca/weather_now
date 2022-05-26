@@ -1,11 +1,18 @@
 import styled from 'styled-components';
+import { renderizeColor } from '../../../utils/index';
 
 interface testeProps{
-    teste2?:boolean;
+    height?:boolean;
+    border?:boolean;
+   
+}
+
+interface colorOfDegrees{
+    temp?:number;
 }
 export const CardItemContainer = styled.div<testeProps>`
 width:250px ;
-height:${props => props.teste2 ? '270' : '230'}px ;
+height:${({height}) => height ? '270' : '230'}px ;
 background-color:#fff;
 border-radius:5px ;
 box-shadow:2px 2px 5px rgba(51,51,51,0.1) ;
@@ -15,10 +22,9 @@ align-items:center ;
 justify-content:space-between ;
 font-family: Helvetica,Arial ;
 `
-
 export const CardTitleArea = styled.div<testeProps>`
  width:100%;
- border-bottom:${props=>props.teste2?' 1px solid  #ebebeb':0} ;
+ border-bottom:${({border})=> border?' 1px solid  #ebebeb':0} ;
 `
 
 export const CardTitle = styled.h5`
@@ -41,12 +47,12 @@ export const ContentCard = styled.div`
 
 
 `
-export const Degrees = styled.div`
+export const Degrees = styled.div<colorOfDegrees>`
 flex:1;
 display:flex ;
 justify-content:center ;
 align-items:center ;
-color:#ff9632;
+color:${({ temp }) => temp && renderizeColor(temp)}; 
 font-size:82px ;
 `
 
@@ -79,9 +85,11 @@ font-size:18px ;
 `
 export const HumidityValue = styled.span`
 color:#737c84;
-
- text-align:center ;
+text-align:center ;
 `
+export const Percentage =styled.span`
+font-size:12px ;
+` 
 
 export const Pressure = styled.div`
  width:50% ;
@@ -101,9 +109,12 @@ export const WrapperPressureValue = styled.span`
 font-size:18px ;
 `
 export const PressureValue = styled.span`
-color:#737c84;
+ color:#737c84;
  text-align:center ;
 `
+export const PressureHpa =styled.span`
+font-size:12px;
+` 
 
 export const FooterCard = styled.div`
 width:100% ;
@@ -116,3 +127,12 @@ align-items:center ;
 justify-content:center ;
 
 `
+
+export const WrapperLoading = styled.div`
+ flex:1;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+`
+
+export const Loading = styled.img``;

@@ -1,17 +1,24 @@
 import { useQuery, UseQueryOptions } from 'react-query';
 import { apiForcities } from './axios';
-import { cityKey } from './key';
 import { CitiesResponse } from "./types";
 
 
 export const useSearchCities = <T=CitiesResponse>(
 nameCity:string,
+key:string,
 options?:UseQueryOptions<CitiesResponse,T>
 )=>{
-  const useResponseCities = useQuery<CitiesResponse ,T>(cityKey,
+  const useResponseCities = useQuery<CitiesResponse ,T>(key,
         ()=> apiForcities.get<T,CitiesResponse>(`/weather?q=${nameCity}`),
-        options
-    );
- return useResponseCities
-}
+        {
+          staleTime:500000,
+          retry:false,
+          refetchInterval:600000,
+          refetchOnWindowFocus: false,
+          ...options
+        },
+       
+    )
+ return useResponseCities;
+};
 
