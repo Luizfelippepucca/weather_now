@@ -12,7 +12,7 @@ options?:UseQueryOptions<CitiesResponse,T>
         ()=> apiForcities.get<T,CitiesResponse>(`/weather?q=${nameCity}`),
         {
           staleTime:500000,
-          retry:false,
+          retry:1,
           refetchInterval:600000,
           refetchOnWindowFocus: false,
           ...options

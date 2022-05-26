@@ -1,28 +1,16 @@
 import styled from 'styled-components';
 import { renderizeColor } from '../../../utils/index';
 
-interface testeProps{
-    height?:boolean;
+interface BorderProps{
     border?:boolean;
    
 }
 
-interface colorOfDegrees{
+interface ColorOfDegrees{
     temp?:number;
 }
-export const CardItemContainer = styled.div<testeProps>`
-width:250px ;
-height:${({height}) => height ? '270' : '230'}px ;
-background-color:#fff;
-border-radius:5px ;
-box-shadow:2px 2px 5px rgba(51,51,51,0.1) ;
-display:flex ;
-flex-direction:column ;
-align-items:center ;
-justify-content:space-between ;
-font-family: Helvetica,Arial ;
-`
-export const CardTitleArea = styled.div<testeProps>`
+
+export const CardTitleArea = styled.div<BorderProps>`
  width:100%;
  border-bottom:${({border})=> border?' 1px solid  #ebebeb':0} ;
 `
@@ -47,7 +35,7 @@ export const ContentCard = styled.div`
 
 
 `
-export const Degrees = styled.div<colorOfDegrees>`
+export const Degrees = styled.div<ColorOfDegrees>`
 flex:1;
 display:flex ;
 justify-content:center ;
@@ -128,11 +116,3 @@ justify-content:center ;
 
 `
 
-export const WrapperLoading = styled.div`
- flex:1;
- display:flex;
- align-items:center;
- justify-content:center;
-`
-
-export const Loading = styled.img``;
