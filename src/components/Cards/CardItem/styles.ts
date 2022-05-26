@@ -1,16 +1,10 @@
 import styled from 'styled-components';
 import { renderizeColor } from '../../../utils/index';
+import { CardTitleAreaProps, DegreesProps } from './types';
 
-interface BorderProps{
-    border?:boolean;
-   
-}
 
-interface ColorOfDegrees{
-    temp?:number;
-}
 
-export const CardTitleArea = styled.div<BorderProps>`
+export const CardTitleArea = styled.div<CardTitleAreaProps>`
  width:100%;
  border-bottom:${({border})=> border?' 1px solid  #ebebeb':0} ;
 `
@@ -35,14 +29,15 @@ export const ContentCard = styled.div`
 
 
 `
-export const Degrees = styled.div<ColorOfDegrees>`
+export const Degrees = styled.div<DegreesProps>`
 flex:1;
 display:flex ;
 justify-content:center ;
 align-items:center ;
-color:${({ temp }) => temp && renderizeColor(temp)}; 
+color:${({ temp }) => renderizeColor(temp)}; 
 font-size:82px ;
 `
+
 
 export const AdtionalsInfo = styled.div`
 width:220px ;

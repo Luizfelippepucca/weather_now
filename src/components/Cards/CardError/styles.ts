@@ -14,15 +14,16 @@ flex-direction:column ;
 
 `
 
-export const Button = styled.div`
+export const Button = styled.button`
  width:110px ;
  border-radius: 40px;
- border: 2px solid grey ;
+ border: 2px solid #737c84 ;
  background-color:#fff ;
  color:grey;
  text-align:center ;
  padding: 10px ;
  cursor: pointer;
+ outline: none ;
 
 `
 

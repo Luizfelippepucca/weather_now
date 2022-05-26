@@ -1,22 +1,20 @@
-
-
 import { useSearchCities } from "../../services";
 import CardItem from "./CardItem";
 import { CardItemContainer, Loading, WrapperLoading } from "./styles";
 import { ContainerCards } from "./styles";
 import Loader from '../../assets/loader.svg';
 import CardError from "./CardError";
-
+import { URUBICI_KEY,  NUUK_KEY , NAIROBI_KEY} from "./constants";
 
 const Cards = ()=>{
-  const {data,isLoading,isSuccess,isError} = useSearchCities('Urubici','UrubiciKey');
-  const {data:dataNuuk,isLoading:isLoadingNuuk,isSuccess:isSuccessNuuk,isError:isErrorNuuk} = useSearchCities('Nuuk','NuukKey');
-  const {data:dataNairobi,isLoading:isLoadingNairobi,isSuccess:isSuccessNairobi,isError:isErrorNairobi} = useSearchCities('Nairobi','NairobiKey');
+  const {data,isLoading,isSuccess,isError} = useSearchCities('Urubici',URUBICI_KEY);
+  const {data:dataNuuk,isLoading:isLoadingNuuk,isSuccess:isSuccessNuuk,isError:isErrorNuuk} = useSearchCities('Nuuk', NUUK_KEY);
+  const {data:dataNairobi,isLoading:isLoadingNairobi,isSuccess:isSuccessNairobi,isError:isErrorNairobi} = useSearchCities('Nairobi', NAIROBI_KEY);
 
 
     return(
         <ContainerCards>
-              <CardItemContainer >
+            <CardItemContainer >
                 {isErrorNuuk &&   <CardError id="Nuuk"/>}  
                 {isLoadingNuuk && 
                     <WrapperLoading>

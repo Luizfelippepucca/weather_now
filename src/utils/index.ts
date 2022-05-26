@@ -5,16 +5,20 @@ export const convertForCelsius = (value?:number)=>{
  
 };
 
-export  const renderizeColor = (temp:number)=>{
+export  const renderizeColor = (temp?:number)=>{
+   
+    if(!temp){
+        return;
+    }
 
-    if(  temp < 0 || temp <= 5  ){
+    if(temp < 5  ){
         return `#69A3FF`;
     }
 
     if( temp > 5 && temp <=25){
         return `#ff9632`;
     }
-
+   
     return `#ED1946`;
    
 };
