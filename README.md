@@ -1,6 +1,4 @@
 # WEATHER NOW 
-![weatherDesktop](https://user-images.githubusercontent.com/52139246/170554143-171c5f73-7f59-4e16-aedf-17de7da49bf4.png)
-
 ![weatherMobile](https://user-images.githubusercontent.com/52139246/170554626-cc6bf092-5642-4572-9ca5-90b494bcb0ec.png)
 
 
